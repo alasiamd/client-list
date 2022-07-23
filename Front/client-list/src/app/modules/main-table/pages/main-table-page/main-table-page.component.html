@@ -1,0 +1,36 @@
+
+<div class="container mt-auto mb-auto pr-5">
+  <div class="row justify-content-start w-75">
+    <div class="col-3 border border-dark">
+      Nombre
+    </div>
+    <div class="col-2 border border-dark">
+      VS Fox
+    </div>
+    <div class="col-2 border border-dark">
+      Imp PDF
+    </div>
+    <div class="col-3 border border-dark">
+      Tipo
+    </div>
+  </div>
+  <div class="row justify-content-start w-75"  *ngFor="let client of clients" >
+    <div class="col-3 border border-dark" [routerLink]="'/clientes/' + client.id">
+      {{ client.nombre }}
+    </div>
+    <div class="col-2 border border-dark" [routerLink]="'/clientes/' + client.id">
+      {{ client.version_fox }}
+    </div>
+    <div class="col-2 border border-dark" [routerLink]="'/clientes/' + client.id">
+      {{ client.imp_pdf }}
+    </div>
+    <div class="col-3 border border-dark" [routerLink]="'/clientes/' + client.id">
+      {{ client.tipo }}
+    </div>
+    <div class="col-1 border border-dark">
+      <a [routerLink]="'/form/' + client.id" class="link-dark">
+        <i class="fa-solid fa-pen-to-square"></i>
+      </a>
+    </div>
+  </div>
+</div>

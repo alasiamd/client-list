@@ -1,0 +1,207 @@
+<!-- <div class="container" *ngFor="let cliente of client"> -->
+
+  <form  [formGroup]="formClient" (ngSubmit)="send()" >
+    <input formControlName="id" [ngModel]="client[0].id" type="hidden">
+    <div class="row pt-3">
+      <div class="col-3">
+        <div class="form-group">
+          <label for="tipo">Tipo  </label>
+          <input formControlName="tipo" [ngModel]="client[0].tipo" type="text" placeholder="" class="form-input-1 m-3">
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="form-group">
+          <label for="nombre">Nombre  </label>
+          <input formControlName="nombre" [ngModel]="client[0].nombre" type="text" placeholder="" class="form-input-2 m-3">
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="form-group">
+          <label for="contacto">Contacto  </label>
+          <input formControlName="contacto" [(ngModel)]="client[0].contacto" type="text" placeholder="" class="form-input-3 m-3">
+        </div>
+      </div>
+
+    </div>
+    <div class="row pt-3">
+      <div class="col-3">
+        <div class="form-group">
+          <label for="tecnico">Técnico  </label>
+          <input formControlName="tecnico" [(ngModel)]="client[0].tecnico" type="text" placeholder="" class="form-input-1 m-3">
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="form-group">
+          <label for="version_fox">Version de Fox  </label>
+          <input formControlName="version_fox" [(ngModel)]="client[0].version_fox" type="text" placeholder="" class="form-input-2 m-3">
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="form-group">
+          <label for="imp_pdf">Impresora PDF  </label>
+          <input formControlName="imp_pdf" [(ngModel)]="client[0].imp_pdf" type="text" placeholder="" class="form-input-3 m-3">
+        </div>
+      </div>
+    </div>
+    <div class="row pt-3">
+      <div class="col-3">
+        <div class="form-group">
+          <label for="recaudacion">Recaudación  </label>
+          <input formControlName="recaudacion" [(ngModel)]="client[0].recaudacion" type="text" placeholder="" class="form-input-1 m-3">
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+            Servidor
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+          <div class="accordion-body">
+            <div class="row pt-3">
+              <div class="form-group">
+                <label for="servidor">Servidor Remoto/Local  </label>
+                <select name="servidor" [(ngModel)]="client[0].servidor" formControlName="servidor"  class="form-input-1 m-3">
+                  <option value="null"></option>
+                  <option value="true">SI</option>
+                  <option value="false">NO</option>
+                </select>
+              </div>
+            </div>
+            <div class="row pt-3">
+              <div class="col-3">
+                <div class="form-group">
+                  <label for="servidor_windows">Versión de Windows  </label>
+                  <input formControlName="servidor_windows" [(ngModel)]="client[0].servidor_windows" type="text" placeholder="" class="form-input-1 m-3">
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="form-group">
+                  <label for="servidor_ip">Dirección IP  </label>
+                  <input formControlName="servidor_ip" [(ngModel)]="client[0].servidor_ip" type="text" placeholder="" class="form-input-2 m-3">
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="form-group">
+                  <label for="servidor_contrasena">Contraseña  </label>
+                  <input formControlName="servidor_contrasena" [(ngModel)]="client[0].servidor_contrasena" type="text" placeholder="" class="form-input-3 m-3">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
+            Envío de expensas por email
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+          <div class="accordion-body">
+            <div class="row pt-3">
+              <div class="form-group">
+                <label for="mail">Envío  </label>
+                <select name="mail" [(ngModel)]="client[0].mail" formControlName="mail"  class="form-input-1 m-3">
+                  <option value="null"></option>
+                  <option value="true">SI</option>
+                  <option value="false">NO</option>
+                </select>
+              </div>
+            </div>
+            <div class="row pt-3">
+              <div class="col-3">
+                <div class="form-group">
+                  <label for="mail_herramienta">Herramienta  </label>
+                  <input formControlName="mail_herramienta" [(ngModel)]="client[0].mail_herramienta" type="text" placeholder="" class="form-input-1 m-3">
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="form-group">
+                  <label for="mail_cuenta">Cuenta  </label>
+                  <input formControlName="mail_cuenta" [(ngModel)]="client[0].mail_cuenta" type="text" placeholder="" class="form-input-2 m-3">
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="form-group">
+                  <label for="mail_servidor">Servidor  </label>
+                  <input formControlName="mail_servidor" [(ngModel)]="client[0].mail_servidor" type="text" placeholder="" class="form-input-3 m-3">
+                </div>
+              </div>
+            </div>
+            <div class="row pt-3">
+              <div class="col-3">
+                <div class="form-group">
+                  <label for="mail_contrasena">Contraseña  </label>
+                  <input formControlName="mail_contrasena" [(ngModel)]="client[0].mail_contrasena" type="text" placeholder="" class="form-input-1 m-3">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree">
+            Generación de cupones para la Web
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+          <div class="accordion-body">
+            <div class="row pt-3">
+              <div class="form-group col-3">
+                <label for="generacion_pdf">Generacion de Cupones  </label>
+                <select name="generacion_pdf" [(ngModel)]="client[0].generacion_pdf" formControlName="generacion_pdf"  class="form-input-1 m-3">
+                  <option value="null"></option>
+                  <option value="true">SI</option>
+                  <option value="false">NO</option>
+                </select>
+              </div>
+              <div class="col-3">
+                <div class="form-group">
+                  <label for="generacion_pdf_empresa">Empresa  </label>
+                  <input formControlName="generacion_pdf_empresa" [(ngModel)]="client[0].generacion_pdf_empresa" type="text" placeholder="" class="form-input-1 m-3">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="true" aria-controls="panelsStayOpen-collapseFour">
+            Any Desk
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+          <div class="accordion-body">
+            <div class="row pt-3">
+              <div class="col-3">
+                <div class="form-group">
+                  <label for="any_desk_id">ID de Any Desk  </label>
+                  <input formControlName="any_desk_id" [(ngModel)]="client[0].any_desk_id" type="text" placeholder="" class="form-input-1 m-3">
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="form-group">
+                  <label for="any_desk_pass">Contraseña  </label>
+                  <input formControlName="any_desk_pass" [(ngModel)]="client[0].any_desk_pass" type="text" placeholder="" class="form-input-2 m-3">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-action pt-3">
+      <button class="login social-btn">Guardar</button>
+  </div>
+
+  </form>
+<!-- </div> -->
+

@@ -1,0 +1,135 @@
+<div class="row pb-5">
+  <div class="col-4">
+    <h2>{{ client[0].tipo }} {{ " " }} {{ client[0].nombre }}</h2>
+  </div>
+  <!-- <div class="col-1"></div> -->
+  <div class="col-1">
+    <a [routerLink]="'/form/' + client[0].id" class="link-dark">
+      <i class="fa-solid fa-pen-to-square fa-2x"></i>
+    </a>
+  </div>
+  <div class="col-1">
+    <a (click)="delClient(idCli)" class="link-dark">
+      <i class="fa-solid fa-delete-left fa-2x"></i>
+    </a>
+  </div>
+</div>
+
+  <div class="row pb-5">
+    <div class="col-4">
+      {{ "Contacto: " }} {{ client[0].contacto }}
+    </div>
+    <div class="col-4">
+      {{ "Técnico: " }} {{ client[0].contacto }}
+    </div>
+    <div class="col-4">
+      {{ "Recaudación: " }} {{ client[0].recaudacion }}
+    </div>
+  </div>
+  <div class="row pb-5">
+    <div class="col-4">
+      {{ "Version de Fox: " }} {{ client[0].version_fox }}
+    </div>
+    <div class="col-4">
+      {{ "Impresora PDF: " }} {{ client[0].imp_pdf }}
+    </div>
+  </div>
+
+  <div class="accordion" id="accordionPanelsStayOpenExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+          Servidor
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+        <div class="accordion-body">
+          <div class="row pb-5">
+            <div class="col-2">
+              {{ "Servidor: " }} {{ client[0].servidor }}
+            </div>
+            <div class="col-5">
+              {{ "Sistema Operativo: " }} {{ client[0].servidor_windows }}
+            </div>
+            <div class="col-4">
+              {{ "IP: " }} {{ client[0].servidor_ip }}
+            </div>
+          </div>
+          <div class="row pb-5">
+            <div class="col-3">
+              {{ "Contraseña: " }} {{ client[0].servidor_contrasena }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
+          Mail
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+        <div class="accordion-body">
+          <div class="row pb-5">
+            <div class="col-4">
+              {{ "Envio de expensas por email: " }} {{ client[0].mail }}
+            </div>
+            <div class="col-3">
+              {{ "Herramienta: " }} {{ client[0].mail_herramienta }}
+            </div>
+            <div class="col-4">
+              {{ "Servidor de correo: " }} {{ client[0].mail_servidor }}
+            </div>
+          </div>
+          <div class="row pb-5">
+            <div class="col-5">
+              {{ "Cuenta: " }} {{ client[0].mail_cuenta }}
+            </div>
+            <div class="col-4">
+              {{ "Contraseña: " }} {{ client[0].mail_contrasena }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree">
+          Generación de cupones para la Web
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+        <div class="accordion-body">
+          <div class="row pb-5">
+            <div class="col-2">
+              {{ "Generacion: " }} {{ client[0].generacion_pdf }}
+            </div>
+            <div class="col-5">
+              {{ "Empresa: " }} {{ client[0].generacion_pdf_empresa }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="true" aria-controls="panelsStayOpen-collapseFour">
+          Any Desk
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+        <div class="accordion-body">
+          <div class="row pb-5">
+            <div class="col-2">
+              {{ "ID Any Desk: " }} {{ client[0].any_desk_id }}
+            </div>
+            <div class="col-5">
+              {{ "Contraseña: " }} {{ client[0].any_desk_pass }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
