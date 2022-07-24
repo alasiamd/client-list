@@ -4,13 +4,13 @@
   </div>
   <!-- <div class="col-1"></div> -->
   <div class="col-1">
-    <a [routerLink]="'/form/' + client[0].id" class="link-dark">
+    <a [routerLink]="'/form/' + client[0].id" class="link-dark" title="Editar">
       <i class="fa-solid fa-pen-to-square fa-2x"></i>
     </a>
   </div>
-  <div class="col-1">
-    <a (click)="delClient(idCli)" class="link-dark">
-      <i class="fa-solid fa-delete-left fa-2x"></i>
+  <div (click)="delClient(idCli)" class="col-1">
+    <a  class="link-dark" title="Borrar">
+      <i  class="fa-solid fa-delete-left fa-2x"></i>
     </a>
   </div>
 </div>
