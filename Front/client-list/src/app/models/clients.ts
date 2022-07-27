@@ -20,4 +20,5 @@ export class Client{
   any_desk_id:string = '';
   any_desk_pass:string = '';
   recaudacion:string = '';
+  logo:string = '';
 }

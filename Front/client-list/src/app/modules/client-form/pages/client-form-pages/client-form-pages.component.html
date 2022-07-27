@@ -1,7 +1,24 @@
 <!-- <div class="container" *ngFor="let cliente of client"> -->
+  <div class="row w-75">
+    <div class="col-2">
+      <img class="img-fluid" [src]="client[0].logo"  alt="logo">
+    </div>
+    <div class="col-2">
+      <button (click)="updateImg(drive2)" >Actualizar</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 ">
+      <label> {{ drive1 }} </label>
+      <input type="text" [(ngModel)]="drive2" placeholder="" class=" form-input-1 m-2">
+    </div>
+    <div class="col-4">
 
+    </div>
+  </div>
   <form  [formGroup]="formClient" (ngSubmit)="send()" >
     <input formControlName="id" [ngModel]="client[0].id" type="hidden">
+    <input formControlName="logo" [ngModel]="client[0].logo" type="hidden">
     <div class="row pt-3">
       <div class="col-3">
         <div class="form-group">

@@ -12,6 +12,9 @@ import { ClientService } from 'src/app/services/client.service';
 })
 export class ClientFormPagesComponent implements OnInit {
 
+  public drive1: string = 'https://drive.google.com/uc?export=view&id=';
+  public drive2: string = '';
+
   public client: Client[] = [
     {
       id:0,
@@ -34,7 +37,8 @@ export class ClientFormPagesComponent implements OnInit {
   generacion_pdf_empresa: '',
   any_desk_id: '',
   any_desk_pass: '',
-  recaudacion: ''
+  recaudacion: '',
+  logo: ''
     }
   ];
   public idCli: number = 0;
@@ -78,7 +82,8 @@ export class ClientFormPagesComponent implements OnInit {
         generacion_pdf_empresa: new FormControl(''),
         any_desk_id: new FormControl(''),
         any_desk_pass: new FormControl(''),
-        recaudacion: new FormControl('')
+        recaudacion: new FormControl(''),
+        logo: new FormControl('')
     })
 
   }
@@ -107,6 +112,11 @@ export class ClientFormPagesComponent implements OnInit {
       console.log(this.formClient.value)
       this.router.navigate(['tabla/'])
     })
+  }
+
+  updateImg(drive2:string){
+    const imgUrl = this.drive1 + drive2;
+    this.client[0].logo = imgUrl;
   }
 
 }
