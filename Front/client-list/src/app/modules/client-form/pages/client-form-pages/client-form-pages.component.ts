@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { Client } from 'src/app/models/clients';
 import { ClientService } from 'src/app/services/client.service';
+import { HeaderService } from 'src/app/shared/services/header.service';
 
 @Component({
   selector: 'app-client-form-pages',
@@ -43,24 +44,33 @@ export class ClientFormPagesComponent implements OnInit {
   ];
   public idCli: number = 0;
 
+  public titulo: string = '';
+
   formClient: FormGroup = new FormGroup({});
 
   constructor(private clientService: ClientService,
               private router: Router,
               private aRoute: ActivatedRoute,
-              private formBuilder: FormBuilder) { }
+              private formBuilder: FormBuilder,
+              private headerService: HeaderService) { }
 
   ngOnInit(): void {
 
     this.idCli = this.aRoute.snapshot.params['idCli']
     //console.log('>>>', this.aRoute.snapshot.params);
-    if (this.idCli !== null){
-    this.clientService.getClient(this.idCli).subscribe(data => {
-      this.client = data;
-      console.log(this.client)
+    if (this.idCli !== undefined){
+      this.titulo = 'modificar'
+      this.headerService.titulo.emit(this.titulo)
+      this.clientService.getClient(this.idCli).subscribe(data => {
+        this.client = data;
       })
     }
-    //console.log('id: ' + this.formBuilder.group);
+    else {
+      this.titulo = 'nuevo'
+      this.headerService.titulo.emit(this.titulo)
+    }
+    console.log('id: ' + this.idCli);
+    console.log('Titulo: ' + this.titulo);
     this.formClient = new FormGroup({
         id: new FormControl(0),
         nombre: new FormControl(''),

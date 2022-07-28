@@ -8,9 +8,10 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ms-auto justify-content-center me-5 pe-5">
-          <a class="nav-link fs-4 mx-4" href="tabla">Tabla Clientes</a>
-          <a class="nav-link fs-4 mx-4" href="form">Nuevo</a>
-          <a class="nav-link fs-4 mx-4">Modificar</a>
+          <a class="nav-link fs-4 mx-4" [ngClass]="titulo == 'tabla' ? 'text-light' : 'text-dark' " href="tabla">Tabla Clientes</a>
+          <a class="nav-link fs-4 mx-4" [ngClass]="titulo == 'nuevo' ? 'text-light' : 'text-dark' " href="form">Nuevo</a>
+          <a class="nav-link fs-4 mx-4" [ngClass]="titulo == 'detalles' ? 'text-light' : 'text-dark' ">Detalles</a>
+          <a class="nav-link fs-4 mx-4" [ngClass]="titulo == 'modificar' ? 'text-light' : 'text-dark' ">Modificar</a>
         </div>
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
