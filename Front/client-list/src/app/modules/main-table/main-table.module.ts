@@ -5,11 +5,13 @@ import { MainTableRoutingModule } from './main-table-routing.module';
 import { MainTablePageComponent } from './pages/main-table-page/main-table-page.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { RouterModule } from '@angular/router';
+import { OrderListPipe } from './pipe/order-list.pipe';
 
 
 @NgModule({
   declarations: [
-    MainTablePageComponent
+    MainTablePageComponent,
+    OrderListPipe
   ],
   imports: [
     CommonModule,

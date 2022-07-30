@@ -4,7 +4,7 @@
     <div class="col-1 border border-dark ">
       Logo
     </div>
-    <div class="col-3 border border-dark">
+    <div class="col-3 border border-dark" (click)="changeOrder('nombre')">
       Nombre
     </div>
     <div class="col-2 border border-dark">
@@ -18,7 +18,7 @@
     </div>
     <div class="col-1 border border-dark"></div>
   </div>
-  <div class="row justify-content-start w-75"  *ngFor="let client of clients" >
+  <div class="row justify-content-start w-75"  *ngFor="let client of clients | orderList: optionsSort.property:optionsSort.order" >
     <div class="col-1 border border-dark">
       <img class="img-fluid" [src]="client.logo"  alt="logo">
     </div>

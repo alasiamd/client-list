@@ -16,6 +16,8 @@ export class MainTablePageComponent implements OnInit {
 
   public titulo:string = '';
 
+  optionsSort: { property:string | null, order:string } = { property : null, order : 'asc' };
+
   constructor(private clientService: ClientService,
               private router: Router,
               private headerService: HeaderService) { }
@@ -37,6 +39,12 @@ export class MainTablePageComponent implements OnInit {
     })
   }
 
-
+  changeOrder(property:string):void {
+    const { order } = this.optionsSort;
+    this.optionsSort = {
+      property,
+      order: order === 'asc' ? 'desc' : 'asc'
+    }
+  }
 
 }
