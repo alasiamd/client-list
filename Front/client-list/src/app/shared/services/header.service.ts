@@ -5,7 +5,8 @@ import { EventEmitter, Injectable } from '@angular/core';
 })
 export class HeaderService {
 
-  titulo: EventEmitter<string> = new EventEmitter<string>();
+titulo: EventEmitter<string> = new EventEmitter<string>();
+texto: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() { }
 }

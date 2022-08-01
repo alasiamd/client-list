@@ -6,12 +6,14 @@ import { MainTablePageComponent } from './pages/main-table-page/main-table-page.
 import { SharedModule } from 'src/app/shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { OrderListPipe } from './pipe/order-list.pipe';
+import { BuscadorPipe } from './pipe/buscador.pipe';
 
 
 @NgModule({
   declarations: [
     MainTablePageComponent,
-    OrderListPipe
+    OrderListPipe,
+    BuscadorPipe
   ],
   imports: [
     CommonModule,

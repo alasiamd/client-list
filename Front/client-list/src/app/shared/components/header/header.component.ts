@@ -9,6 +9,7 @@ import { HeaderService } from '../../services/header.service';
 })
 export class HeaderComponent implements OnInit {
 
+  filtroCliente: string = '';
   public titulo: string = '';
 
   constructor(public headerService: HeaderService) { }
@@ -20,6 +21,10 @@ export class HeaderComponent implements OnInit {
         console.log(this.titulo)
       }
     )
+  }
+
+  search(texto:string):void {
+    this.headerService.texto.emit(texto);
   }
 
 }

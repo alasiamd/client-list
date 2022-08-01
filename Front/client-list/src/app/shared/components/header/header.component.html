@@ -14,7 +14,7 @@
           <a class="nav-link fs-4 mx-4" [ngClass]="titulo == 'modificar' ? 'text-light' : 'text-dark' ">Modificar</a>
         </div>
         <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <input class="form-control me-2" type="search" placeholder="Search" name="buscar" aria-label="Search" (ngModelChange)="search($event)" [(ngModel)]="filtroCliente" >
           <button class="btn bg-primary btn-outline-light" type="submit">Buscar</button>
         </form>
       </div>

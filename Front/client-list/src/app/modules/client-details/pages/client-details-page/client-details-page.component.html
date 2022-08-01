@@ -19,10 +19,10 @@
     <div class="col-4">
       {{ "Contacto: " }} {{ client[0].contacto }}
     </div>
-    <div class="col-4">
+    <div class="col-4" *ngIf="client[0].tecnico != '' ">
       {{ "Técnico: " }} {{ client[0].tecnico }}
     </div>
-    <div class="col-4">
+    <div class="col-4" *ngIf="client[0].recaudacion != '' ">
       {{ "Recaudación: " }} {{ client[0].recaudacion }}
     </div>
   </div>
@@ -30,7 +30,7 @@
     <div class="col-4">
       {{ "Version de Fox: " }} {{ client[0].version_fox }}
     </div>
-    <div class="col-4">
+    <div class="col-4" *ngIf="client[0].imp_pdf != '' ">
       {{ "Impresora PDF: " }} {{ client[0].imp_pdf }}
     </div>
   </div>
@@ -48,15 +48,15 @@
             <div class="col-2">
               {{ "Servidor: " }} {{ client[0].servidor }}
             </div>
-            <div class="col-5">
+            <div class="col-5" *ngIf="client[0].servidor_windows != '' ">
               {{ "Sistema Operativo: " }} {{ client[0].servidor_windows }}
             </div>
-            <div class="col-4">
+            <div class="col-4" *ngIf="client[0].servidor_ip!= '' ">
               {{ "IP: " }} {{ client[0].servidor_ip }}
             </div>
           </div>
           <div class="row pb-5">
-            <div class="col-3">
+            <div class="col-3" *ngIf="client[0].servidor_contrasena != '' ">
               {{ "Contraseña: " }} {{ client[0].servidor_contrasena }}
             </div>
           </div>
@@ -76,18 +76,18 @@
             <div class="col-4">
               {{ "Envio de expensas por email: " }} {{ client[0].mail }}
             </div>
-            <div class="col-3">
+            <div class="col-3" *ngIf="client[0].mail_herramienta != '' ">
               {{ "Herramienta: " }} {{ client[0].mail_herramienta }}
             </div>
-            <div class="col-4">
+            <div class="col-4" *ngIf="client[0].mail_servidor != '' ">
               {{ "Servidor de correo: " }} {{ client[0].mail_servidor }}
             </div>
           </div>
           <div class="row pb-5">
-            <div class="col-5">
+            <div class="col-5" *ngIf="client[0].mail_cuenta != '' ">
               {{ "Cuenta: " }} {{ client[0].mail_cuenta }}
             </div>
-            <div class="col-4">
+            <div class="col-4" *ngIf="client[0].mail_contrasena != '' ">
               {{ "Contraseña: " }} {{ client[0].mail_contrasena }}
             </div>
           </div>
@@ -106,7 +106,7 @@
             <div class="col-2">
               {{ "Generacion: " }} {{ client[0].generacion_pdf }}
             </div>
-            <div class="col-5">
+            <div class="col-5" *ngIf="client[0].generacion_pdf_empresa != '' ">
               {{ "Empresa: " }} {{ client[0].generacion_pdf_empresa }}
             </div>
           </div>
@@ -122,10 +122,10 @@
       <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
         <div class="accordion-body">
           <div class="row pb-5">
-            <div class="col-2">
+            <div class="col-2" *ngIf="client[0].any_desk_id != '' ">
               {{ "ID Any Desk: " }} {{ client[0].any_desk_id }}
             </div>
-            <div class="col-5">
+            <div class="col-5" *ngIf="client[0].any_desk_pass != '' ">
               {{ "Contraseña: " }} {{ client[0].any_desk_pass }}
             </div>
           </div>
